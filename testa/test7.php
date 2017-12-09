@@ -9,6 +9,8 @@ if(isset($_POST['sub'])){
     unset($arr);
     unset($ss);
     echo $ss;
+
+
 }
 //else{
 //    echo "error";

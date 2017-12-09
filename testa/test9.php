@@ -18,6 +18,9 @@
 //base64  迅雷下载地址后边有==
 
 
+
+
+
 if(isset($_POST['sub'])){
     $str = $_POST['address'];
     echo $str;
