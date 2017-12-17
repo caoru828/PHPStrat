@@ -5,6 +5,8 @@ $two = &$one;
 $one =10;
 $two = "hello";
 
+
+
 echo $one."<br/>";
 echo $two."<br/>";
 ?>
