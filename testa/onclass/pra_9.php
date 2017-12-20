@@ -15,6 +15,7 @@ for ($i=1;$i<=9;$i++){
     echo "<br>";
 }
 
+
 for ($i=1;$i<=9;$i++){
     for ($j=1;$j<=2;$j++){
         if($i==1&&$j==1) continue;
