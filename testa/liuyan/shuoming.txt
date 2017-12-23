@@ -1,0 +1,54 @@
+留言板
+
+功能分析
+
+老单的心情 ---title
+老单喜欢老谢---content
+
+1：发表留言、修改留言、删除留言、留言搜索、留言列表、留言详情、点击率
+2：留言置顶、评论、点赞、私信
+3：登录、注册
+4：转发、支付（接口）
+
+启动数据库mysql 3306 关系型数据库  表和表的关联  k-v  mongodb redis 
+
+每个表 只能有一个主键(自增 不能为空) 多个外键  主外键关联
+Navicat连接数据库
+
+数据库->表->列名->值
+
+
+列名 数据类型  int char[8] varchar[8] text date timestamp blob
+
+
+
+数据库建立(newblog)
+1:blog表(bid,title,content,time,hits)  
+
+操作数据库 四大关键字
+增 insert  
+  insert into 表名(列名,列名....) values(值,值,....) 列名--值 一一对应
+
+删 delete
+	delete from 表名 where bid=1
+
+改 update
+
+	update 表名 set 列名=值,列名=值 where 
+
+查 select
+  select * from 表名
+  select * from 表名 where 
+  select title,content from 表名
+
+
+
+
+
+
+
+
+
+
+
+
