@@ -1,12 +1,11 @@
 <?php
 include "conn.php";
-if (isset($_COOKIE['uid'])){
-    $id= $_COOKIE['uid'];
-    echo $_COOKIE['uname']."已登录！";
-    echo "<a href='ulogin.php?'".$id."'> 注销</a>";
-}else{
-    echo "<a href='login.php'>未登录！</a>";
+
+if(isset($_GET['url'])){
+    $url = $_GET['url'];
+
 }
+
 if(isset($_POST['sub'])){
     $uname = $_POST['uname'];
     $pass = $_POST['pass'];
@@ -18,7 +17,15 @@ if(isset($_POST['sub'])){
     if($rs){
         setcookie('uid',$rs['uid']);
         setcookie('uname',$rs['uname']);
-        header('location:index.php');
+
+//       跳转
+        if(isset($_POST['url'])){
+            $url = $_POST['url'];
+            echo "<script>location='$url'</script>";
+        }else{
+            header('location:index.php');
+        }
+
     }else{
 
         header('location:login.php');
