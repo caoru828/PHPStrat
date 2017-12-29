@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+   AJAX = Asynchronous JavaScript and XML
+    客户端浏览器向服务器数据交互的方式
+   ajax不刷新页面的数据请求数据提交
+-->
+<div id="div1"></div>
+<button class="btn">add</button>
+<script>
+//    1.创建xmlhttprequest对象
+
+var oBtn = document.getElementsByClassName("btn");
+var oDiv1 = document.getElementById("div1");
+oBtn.onclick = function () {
+    if(window.XMLHttpRequest){
+        var xmlhttp = new XMLHttpRequest();
+    }else{
+        var xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+//    2.发送请求
+//    get
+    xmlhttp.open('GET','server.php?name=cc',true);
+    xmlhttp.send();
+
+//    xmlhttp.open("POST","server.php",true);
+//    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//    xmlhttp.send('name=cc&&age=18');
+
+//    3.执行回调，从回调函数中进行相应的dom操作
+    xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+             oDiv1.innerHTML =  xmlhttp.responseText;
+        }
+    }
+
+}
+
+
+
+</script>
+</body>
+</html>
+
+
